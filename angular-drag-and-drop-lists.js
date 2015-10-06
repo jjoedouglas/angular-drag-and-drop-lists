@@ -108,8 +108,6 @@ angular.module('dndLists', [])
 
         // Invoke callback
         $parse(attr.dndDragstart)(scope, {event: event});
-
-        event.stopPropagation();
       });
 
       /**
@@ -144,7 +142,6 @@ angular.module('dndLists', [])
         element.removeClass("dndDragging");
         $timeout(function() { element.removeClass("dndDraggingSource"); }, 0);
         dndDragTypeWorkaround.isDragging = false;
-        event.stopPropagation();
       });
 
       /**
@@ -301,7 +298,6 @@ angular.module('dndLists', [])
 
         element.addClass("dndDragover");
         event.preventDefault();
-        event.stopPropagation();
         return false;
       });
 
